@@ -24,9 +24,15 @@ describe('Room', function(){
 
         // set actual to be the area attribute of room object and assert actual to expected value of 5
         const actual = room.area;
-        assert.strictEqual(actual, 5);
+        assert.strictEqual(actual, 5)
 
+    });
 
+    it("should start unpainted", function(){
+
+        // set actual to be current room painted status (which is false) and compare to expected result of false
+        const actual = room.painted;
+        assert.strictEqual(actual, false)
 
 
     });
