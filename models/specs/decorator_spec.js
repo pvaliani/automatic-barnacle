@@ -37,6 +37,15 @@ describe('Decorator', function(){
 
     });
 
+    it('should be able to calculate the total litres in stock', function () {
+
+
+        let decorator = new Decorator([1,2]);
+        const actual = decorator.totalLitres();
+        assert.strictEqual(actual, 3);
+
+    })
+
 
 
 
