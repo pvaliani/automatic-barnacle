@@ -27,6 +27,9 @@ Decorator.prototype.totalLitres = function() {
 
 
 Decorator.prototype.checkRoom = function(room) {
+
+    // if the rooms area attribute is less than or equal to the total litres function (instance) then room can be painted i.e true else it is false
+
     if (room.area <= this.totalLitres()) {
         return true;
     } else {
@@ -36,11 +39,17 @@ Decorator.prototype.checkRoom = function(room) {
 
 
 Decorator.prototype.paintRoom = function(room) {
+
+    // If the decorator has checked whether there is enough paint i.e checkRoom then room.painted = true i.e the room can be painted as there is the correct stock
+
     if (this.checkRoom(room) === true) {
         room.painted = true;
         return room.painted;
     };
 };
+
+
+
 
 
 module.exports = Decorator;

@@ -68,7 +68,11 @@ describe('Decorator', function(){
         assert.strictEqual(actual, true);
     });
 
+
     it('should be able to paint a room if enough stock', function() {
+
+        // should check that the value returned from checkRoom is true and compare to actual i.e true
+
         decorator.addPaintCan(paint_can_2);
         const actual = decorator.paintRoom(room);
         assert.strictEqual(actual, true);
