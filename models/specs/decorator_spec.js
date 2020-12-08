@@ -16,12 +16,14 @@ describe('Decorator', function(){
     let decorator;
     let paint_can_1;
     let paint_can_2;
+    let room;
 
     beforeEach(function(){
 
         decorator = new Decorator([]);
         paint_can_1 = new Paint_Can(5);
-        paint_can_2 = new Paint_Can(10);
+        paint_can_2 = new Paint_Can(15);
+        room = new Room(10);
 
     });
 
@@ -45,8 +47,15 @@ describe('Decorator', function(){
         decorator.addPaintCan(paint_can_1);
         decorator.addPaintCan(paint_can_2);
         const actual = decorator.totalLitres();
-        assert.strictEqual(actual, 15)
+        assert.strictEqual(actual, 20)
     });
+
+    it('should be able to calculate whether enough paint exists to paint a room', function() {
+        decorator.addPaintCan(paint_can_2);
+        const actual = decorator.checkRoom(room);
+        assert.strictEqual(actual, true);
+    });
+
 
 
 
