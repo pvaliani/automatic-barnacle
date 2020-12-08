@@ -38,6 +38,7 @@ describe('Room', function(){
 
     it("should be able to be painted", function(){
 
+        // paint the current room object, define actual as being the newly painted room. Check that the room has been painted by looking at expected value of true and comparing
         room.paintRoom();
         const actual = room.painted;
         assert.strictEqual(actual, true)
