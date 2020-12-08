@@ -1,28 +1,23 @@
-const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require("constants");
-
 const Decorator = function (){
     this.stock = [];
+    this.paintLitres = 0;
 
 }
 
 Decorator.prototype.addPaintCan = function(paint_can) {
 
     this.stock.push(paint_can);
+    this.paintLitres += paint_can.litres
 
 }
-
 
 Decorator.prototype.totalLitres = function() {
+    let total = 0
+    for (var paint of this.stock) {
+        total += paint.litres;
+    };
+    return total; 
+};
 
-    sum = 0;
-    let total = this.stock;
-
-    for (var i = 0; i < total.length; i++) {
-        sum += total[i]
-      }
-
-    return sum;
-
-}
 
 module.exports = Decorator;

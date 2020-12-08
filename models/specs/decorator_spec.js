@@ -8,16 +8,20 @@ const Decorator = require('../decorator.js');
 
 const Paint_Can = require('../paint_can.js')
 
+const Room = require("../room");
+
 
 describe('Decorator', function(){
 
     let decorator;
-    let paint_can;
+    let paint_can_1;
+    let paint_can_2;
 
     beforeEach(function(){
 
         decorator = new Decorator([]);
-        paint_can = new Paint_Can(5);
+        paint_can_1 = new Paint_Can(5);
+        paint_can_2 = new Paint_Can(10);
 
     });
 
@@ -30,21 +34,21 @@ describe('Decorator', function(){
 
     it("should be able to add a can of paint to paint stock", function(){
 
-        decorator.addPaintCan(paint_can);
+        decorator.addPaintCan(paint_can_1);
         const actual = decorator.stock.length;
         assert.strictEqual(actual, 1);
 
 
     });
 
-    it('should be able to calculate the total litres in stock', function () {
-
-
-        let decorator = new Decorator([1,2]);
+    it('should be able to calculate total litres paint in stock', function() {
+        decorator.addPaintCan(paint_can_1);
+        decorator.addPaintCan(paint_can_2);
         const actual = decorator.totalLitres();
-        assert.strictEqual(actual, 3);
+        assert.strictEqual(actual, 15)
+    });
 
-    })
+
 
 
 
