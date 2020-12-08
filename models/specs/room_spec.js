@@ -12,9 +12,22 @@ describe('Room', function(){
     // create new room object in parent for describe method
     let room;
 
+    // beforeEach allows each test to access the new room object for testing purposes
+
     beforeEach(function(){
 
         room = new Room(5)
+
+    });
+
+    it("should have an area", function(){
+
+        // set actual to be the area attribute of room object and assert actual to expected value of 5
+        const actual = room.area;
+        assert.strictEqual(actual, 5);
+
+
+
 
     });
 
