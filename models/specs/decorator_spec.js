@@ -28,6 +28,15 @@ describe('Decorator', function(){
 
     });
 
+    it("should be able to add a can of paint to paint stock", function(){
+
+        decorator.addPaintCan(paint_can);
+        const actual = decorator.stock.length;
+        assert.strictEqual(actual, 1);
+
+
+    });
+
 
 
 
