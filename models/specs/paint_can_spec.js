@@ -34,6 +34,14 @@ describe('Paint_Can', function(){
 
     });
 
+    it("should be able to empty itself of paint", function(){
+
+        paint_can.emptyPaint();
+        const actual = paint_can.litres;
+        assert.strictEqual(actual, 0)
+
+    });
+
 
 
 
