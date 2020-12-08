@@ -6,13 +6,19 @@ const Decorator = function (){
 
 Decorator.prototype.addPaintCan = function(paint_can) {
 
+    // push a paint_can into the stock empty list 
     this.stock.push(paint_can);
     this.paintLitres += paint_can.litres
 
 }
 
 Decorator.prototype.totalLitres = function() {
+
+    // set local scope total variable to 0
+
     let total = 0
+
+    // for each paint can in the stock set total to be total = total + paint.litres i.e each object iterations litres property summed up. Then return the total at the end 
     for (var paint of this.stock) {
         total += paint.litres;
     };
