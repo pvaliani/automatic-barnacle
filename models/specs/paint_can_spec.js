@@ -25,6 +25,12 @@ describe('Paint_Can', function(){
         const actual = paint_can.litres;
         assert.strictEqual(actual, 5)
 
+    });
+
+    it("should be able to check if it is empty", function(){
+
+        const actual = paint_can.checkIfEmpty();
+        assert.strictEqual(actual, false)
 
     });
 
