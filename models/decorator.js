@@ -1,4 +1,5 @@
 const Decorator = function (){
+    // this is an array of paint_can objects - instances of paint_can
     this.stock = [];
     this.paintLitres = 0;
 
@@ -14,12 +15,20 @@ Decorator.prototype.addPaintCan = function(paint_can) {
 
 Decorator.prototype.totalLitres = function() {
 
+    // loop over all paint cans in the stock. When in the loop grab the paint cans litres value
+    // add that to a total - set that total to be 0 before the loop - set scope to let so its local to function
+
+    // ---------------------------------------------------------
+
     // set local scope total variable to 0
 
     let total = 0
 
-    // for each paint can in the stock set total to be total = total + paint.litres i.e each object iterations litres property summed up. Then return the total at the end 
-    for (var paint of this.stock) {
+    // use keyword OF in an array and IN for an object --- *** IMPORTANT *** - IN is for keys in an object in JS - can use let instead of const for paint in the for loop
+
+    // for each paint can in the stock set total to be total = total + paint.litres i.e each object iterations litres property summed up. Then return the total at the end
+     
+    for (const paint of this.stock) {
         total += paint.litres;
     };
     return total; 
@@ -47,6 +56,9 @@ Decorator.prototype.paintRoom = function(room) {
         return room.painted;
     };
 };
+
+// ------------------ EXTENSIONS SOLNS -----------------------------------------
+
 
 
 

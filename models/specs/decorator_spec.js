@@ -45,6 +45,8 @@ describe('Decorator', function(){
         decorator.addPaintCan(paint_can_1);
         const actual = decorator.stock.length;
         assert.strictEqual(actual, 1);
+        // two asserts added here - one checks the array object against stock so still 11 tests but two asserts for robustness
+        assert.deepStrictEqual(decorator.stock, [paint_can_1])
 
 
     });
@@ -78,7 +80,7 @@ describe('Decorator', function(){
         assert.strictEqual(actual, true);
     });
 
-
+// ---------------- EXTENSIONS SOLNS --------------------------------
 
 
 

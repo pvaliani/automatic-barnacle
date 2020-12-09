@@ -28,7 +28,7 @@ describe('Paint_Can', function(){
 
     });
 
-    it("should be able to check if it is empty", function(){
+    it("should be able to check if it has started empty", function(){
 
         const actual = paint_can.checkIfEmpty();
         assert.strictEqual(actual, false)
@@ -43,8 +43,6 @@ describe('Paint_Can', function(){
         assert.strictEqual(actual, 0)
 
     });
-
-
 
 
 });
